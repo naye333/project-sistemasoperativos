@@ -1,0 +1,60 @@
+/* ===== ESTILO CMD CLÁSICO SIMPLE ===== */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e; /* gris oscuro */
+    color: #e0e0e0; /* gris claro */
+    font-family: Consolas, "Courier New", monospace;
+    text-align: center;
+}
+
+/* Título */
+h1 {
+    margin-top: 60px;
+    font-weight: normal;
+}
+
+/* Caja de información */
+.info-curso {
+    background-color: #2a2a2a;
+    width: 60%;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 5px;
+}
+
+/* Botones */
+.botones {
+    margin-top: 30px;
+}
+
+.botones a {
+    display: inline-block;
+    background-color: #3a3a3a;
+    color: #ffffff;
+    padding: 15px 25px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.botones a:hover {
+    background-color: #5a5a5a;
+}
+
+.texto-seleccion {
+    margin-top: 40px;
+    font-size: 20px;
+    color: #cccccc;
+}
+
+.footer {
+    margin-top: 100px;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #aaaaaa;
+    border-top: 1px solid #444;
+}
