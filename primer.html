@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Primer Corte</title>
+    <link rel="stylesheet" href="Styles/home.css">
+    <script src="JS/common.js" defer></script>
+</head>
+
+<body>
+
+<h1>Primer Corte</h1>
+
+<div class="info-curso">
+    <p>
+        En este corte la tematica se trata del funcionamiento del sistema
+        operativo y el uso de comandos en CMD y PowerShell.
+    </p>
+</div>
+
+<div class="botones">
+    <a href="#" onclick="mostrarSeccion('cmd')">CMD</a>
+    <a href="#" onclick="mostrarSeccion('ps')">PowerShell</a>
+</div>
+
+<!-- ================= CMD ================= -->
+
+<div id="cmd" class="seccion" style="display:none;">
+
+    <h2>CMD - Mantenimiento Windows 11</h2>
+
+    <div class="categoria">
+        <h3 onclick="toggleCategoria(this)">Procesador y sistema</h3>
+        <div class="contenido">
+            <p><b>systeminfo</b> → Información detallada del sistema.</p>
+            <p><b>perfmon /report</b> → Informe completo de rendimiento.</p>
+        </div>
+    </div>
+
+    <div class="categoria">
+        <h3 onclick="toggleCategoria(this)">Disco duro</h3>
+        <div class="contenido">
+            <p><b>chkdsk C: /f /r</b> → Revisa y repara errores.</p>
+            <p><b>fsutil dirty query C:</b> → Verifica si el disco necesita reparación.</p>
+        </div>
+    </div>
+
+    <div class="categoria">
+        <h3 onclick="toggleCategoria(this)">Memoria RAM</h3>
+        <div class="contenido">
+            <p><b>mdsched.exe</b> → Diagnóstico de memoria.</p>
+            <p><b>systeminfo</b> → Muestra memoria instalada.</p>
+        </div>
+    </div>
+
+    <div class="categoria">
+        <h3 onclick="toggleCategoria(this)">Archivos del sistema</h3>
+        <div class="contenido">
+            <p><b>sfc /scannow</b> → Repara archivos dañados.</p>
+            <p><b>DISM /Online /Cleanup-Image /RestoreHealth</b> → Repara imagen de Windows.</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- ================= POWERSHELL ================= -->
+
+<div id="ps" class="seccion" style="display:none;">
+
+    <h2>PowerShell - Mantenimiento Windows 11</h2>
+
+    <div class="categoria">
+        <h3 onclick="toggleCategoria(this)">Procesador y sistema</h3>
+        <div class="contenido">
+            <p><b>Get-WmiObject Win32_Processor</b> → Información del CPU.</p>
+            <p><b>Get-ComputerInfo</b> → Datos completos del sistema.</p>
+            <p><b>Get-Process | Sort-Object CPU</b> → Procesos que más consumen CPU.</p>
+        </div>
+    </div>
+
+    <div class="categoria">
+        <h3 onclick="toggleCategoria(this)">Disco duro</h3>
+        <div class="contenido">
+            <p><b>Get-PhysicalDisk</b> → Estado de discos físicos.</p>
+            <p><b>Get-WmiObject Win32_LogicalDisk</b> → Espacio libre.</p>
+            <p><b>Repair-Volume -DriveLetter C -Scan</b> → Escanea disco.</p>
+            <p><b>Repair-Volume -DriveLetter C -OfflineScanAndFix</b> → Repara errores.</p>
+        </div>
+    </div>
+
+    <div class="categoria">
+        <h3 onclick="toggleCategoria(this)">Memoria RAM</h3>
+        <div class="contenido">
+            <p><b>Get-WmiObject Win32_PhysicalMemory</b> → Información RAM.</p>
+            <p><b>Get-Counter '\Memory\Available MBytes'</b> → Memoria disponible.</p>
+        </div>
+    </div>
+
+    <div class="categoria">
+        <h3 onclick="toggleCategoria(this)">Batería</h3>
+        <div class="contenido">
+            <p><b>powercfg /batteryreport</b> → Reporte de batería.</p>
+            <p><b>Get-WmiObject Win32_Battery</b> → Estado básico batería.</p>
+        </div>
+    </div>
+
+    <div class="categoria">
+        <h3 onclick="toggleCategoria(this)">Procesos y rendimiento</h3>
+        <div class="contenido">
+            <p><b>Get-Process | Sort-Object CPU</b> → Procesos por CPU.</p>
+            <p><b>Get-Process | Sort-Object PM</b> → Procesos por memoria.</p>
+            <p><b>Get-Counter '\Processor(_Total)\% Processor Time'</b> → Uso total CPU.</p>
+        </div>
+    </div>
+
+    <div class="categoria">
+        <h3 onclick="toggleCategoria(this)">Programas instalados</h3>
+        <div class="contenido">
+            <p><b>Get-WmiObject Win32_Product</b> → Lista programas.</p>
+            <p><b>Get-Package</b> → Paquetes instalados.</p>
+            <p><b>Get-WindowsUpdateLog</b> → Historial actualizaciones.</p>
+        </div>
+    </div>
+
+</div>
+
+<br><br>
+<a href="index.html" style="color:white;">⬅ Volver al inicio</a>
+
+</body>
+</html>
